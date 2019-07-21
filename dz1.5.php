@@ -7,5 +7,6 @@ $opel = [['model'=>"opel 33"],['speed'=>160],['doors'=>"3"],['year'=>2017]];
 $all = [$bmw, $toyota, $opel];
 
 for ($i = 0; $i<sizeof($all); $i++) {
-    print $all[$i]['model'].' '.$all[$i]['speed'].' '.$all[$i]['doors'].' '.$all[$i]['year'].'<br>';
+
+    print $all[$i][0]['model'].' '.$all[$i][1]['speed'].' '.$all[$i][2]['doors'].' '.$all[$i][3]['year'].'<br>';
 }
