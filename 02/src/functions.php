@@ -52,3 +52,7 @@ function task3 ($p1, $p2) {
     }
     return $n;
 }
+
+function task6 ($filename) {
+   print file_get_contents($filename);
+}

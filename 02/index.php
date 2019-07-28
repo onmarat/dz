@@ -17,3 +17,13 @@ print str_replace("К", "", $nn);
 
 $bb = "Две бутылки лимонада";
 print str_replace("Две", "Три", $bb);
+
+//task 6
+
+$file = "test.txt";
+fopen($file, "w") or die("Невозможно создать файл");
+$current = file_get_contents($file);
+$current .= "Hello again!";
+file_put_contents($file, $current);
+
+task6($file);
