@@ -34,3 +34,21 @@ function task2 ($p1) {
     return $n;
 
 }
+
+function task3 ($p1, $p2) {
+    if (is_int ($p1) == true && is_int ($p2) == true) {
+        $n = "<table>";
+        for($i = 1; $i<=$p1; $i++){
+            $n .= "<tr>";
+            for ($b = 1; $b<=$p2; $b++) {
+                $n .= "<td>".$i*$b."</td>";
+            }
+            $n .= "</tr>";
+        }
+        $n .= "</table>";
+    }
+    else {
+        $n = "Неизвестная ошибка";
+    }
+    return $n;
+}
