@@ -2,7 +2,9 @@
 //task1
 function task1($file) {
     $fileData = file_get_contents($file);
-    $xml = new SimpleXMLElement($file);
+
+    //print $fileData;
+    $xml = new SimpleXMLElement($fileData);
     $orderNumber = $xml['PurchaseOrderNumber'];
     $orderDate = $xml['OrderDate'];
     $shippingAddress = $xml->xpath("//Address[@Type='Shipping']")[0];
@@ -10,7 +12,7 @@ function task1($file) {
     $deliveryNotes = $xml->DeliveryNotes;
     $items = $xml->Items->Item;
 
-    var_dump($orderNumber);
+   // var_dump($orderNumber);
 
 
 
