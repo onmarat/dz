@@ -2,18 +2,15 @@
 //task1
 function task1($file) {
     $fileData = file_get_contents($file);
-    $xml = new SimpleXMLElement($fileData);
-    $orderNumber = $xml->PurchaseOrder;
-    print "<pre>";
-    var_dump($orderNumber);
-
-        foreach($xml->PurchaseOrder[0]->attributes() as $a => $b) {
-            echo $a,'="',$b,"\"\n";
-        }
-    $shipping = $xml->xpath("//Adress[@Type='Shipping']")[0];
-    $billing = $xml->xpath("//Adress[@Type='Billing']")[0];
+    $xml = new SimpleXMLElement($file);
+    $orderNumber = $xml['PurchaseOrderNumber'];
+    $orderDate = $xml['OrderDate'];
+    $shippingAddress = $xml->xpath("//Address[@Type='Shipping']")[0];
+    $billingAddress = $xml->xpath("//Address[@Type='Billing']")[0];
     $deliveryNotes = $xml->DeliveryNotes;
     $items = $xml->Items->Item;
+
+    var_dump($orderNumber);
 
 
 
